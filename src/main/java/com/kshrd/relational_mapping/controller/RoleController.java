@@ -2,11 +2,9 @@ package com.kshrd.relational_mapping.controller;
 
 
 import com.kshrd.relational_mapping.model.dto.RoleDto;
-import com.kshrd.relational_mapping.model.entity.Role;
 import com.kshrd.relational_mapping.model.request.RoleRequest;
 import com.kshrd.relational_mapping.model.response.ApiResponse;
 import com.kshrd.relational_mapping.service.RoleService;
-import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -48,7 +46,7 @@ public class RoleController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<RoleDto>> createRole(@RequestBody @Valid RoleRequest request) {
+    public ResponseEntity<ApiResponse<RoleDto>> createRole(@RequestBody RoleRequest request) {
         RoleDto role = roleService.createRole(request);
         ApiResponse<RoleDto> response = ApiResponse.<RoleDto>builder()
                 .success(true)

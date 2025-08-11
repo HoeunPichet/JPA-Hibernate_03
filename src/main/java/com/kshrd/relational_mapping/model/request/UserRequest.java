@@ -1,5 +1,8 @@
 package com.kshrd.relational_mapping.model.request;
 
+import com.kshrd.relational_mapping.model.entity.Role;
+import com.kshrd.relational_mapping.model.entity.User;
+import com.kshrd.relational_mapping.model.entity.UserProfile;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +19,11 @@ public class UserRequest {
 
     private String password;
 
-    private String roleId;
+    private Long roleId;
 
     private UserProfileRequest userProfile;
+
+    public User toEntity(Role role) {
+        return new User(null, this.username, this.email, this.password, role, null);
+    }
 }
