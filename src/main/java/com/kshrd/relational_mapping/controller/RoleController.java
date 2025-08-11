@@ -5,7 +5,6 @@ import com.kshrd.relational_mapping.model.dto.RoleDto;
 import com.kshrd.relational_mapping.model.request.RoleRequest;
 import com.kshrd.relational_mapping.model.response.ApiResponse;
 import com.kshrd.relational_mapping.service.RoleService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
