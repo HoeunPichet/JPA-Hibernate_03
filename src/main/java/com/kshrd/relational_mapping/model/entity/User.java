@@ -32,4 +32,8 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserProfile userProfile;
+
+//    public UserResponse toResponse(){
+//        return new UserResponse(this.id, this.username, this.email, this.password, this.userProfile.toResponse());
+//    }
 }
