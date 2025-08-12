@@ -80,4 +80,28 @@ public class WorkspaceController {
 
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/invite/{workspace-id}/{user-id}")
+    public ResponseEntity<ApiResponse<String>> addUserToWorkspace(@PathVariable("workspace-id") Long workspaceId, @PathVariable("user-id") Long userId) {
+        workspaceService.addUserToWorkspace(workspaceId, userId);
+        ApiResponse<String> response = ApiResponse.<String>builder()
+                .success(true)
+                .message("User is added into workspace successfully!")
+                .status(HttpStatus.OK)
+                .build();
+
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PutMapping("/status/{workspace-id}/{user-id}")
+    public ResponseEntity<ApiResponse<String>> acceptUserInWorkspace(@PathVariable("workspace-id") Long workspaceId, @PathVariable("user-id") Long userId, @RequestParam Boolean status) {
+        workspaceService.acceptUserInWorkspace(workspaceId, userId, status);
+        ApiResponse<String> response = ApiResponse.<String>builder()
+                .success(true)
+                .message("Status is updated successfully!")
+                .status(HttpStatus.OK)
+                .build();
+
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
 }

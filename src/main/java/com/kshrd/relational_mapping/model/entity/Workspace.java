@@ -3,6 +3,8 @@ package com.kshrd.relational_mapping.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -20,4 +22,7 @@ public class Workspace {
     private String name;
 
     private String code;
+
+    @OneToMany(mappedBy = "workspace")
+    private List<UserWorkspace> userWorkspaces;
 }

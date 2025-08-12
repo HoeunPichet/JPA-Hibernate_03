@@ -15,4 +15,8 @@ public interface WorkspaceService {
     WorkspaceDto updateWorkspace(Long id, WorkspaceRequest workspaceRequest);
 
     void deleteWorkspace(Long id);
+
+    void addUserToWorkspace(Long workspaceId, Long userId);
+
+    void acceptUserInWorkspace(Long workspaceId, Long userId, Boolean isAccepted);
 }

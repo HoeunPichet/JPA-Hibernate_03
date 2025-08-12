@@ -1,9 +1,7 @@
 package com.kshrd.relational_mapping.service.impl;
 
 import com.kshrd.relational_mapping.model.dto.UserDto;
-import com.kshrd.relational_mapping.model.entity.Role;
-import com.kshrd.relational_mapping.model.entity.User;
-import com.kshrd.relational_mapping.model.entity.UserProfile;
+import com.kshrd.relational_mapping.model.entity.*;
 import com.kshrd.relational_mapping.model.request.UserRequest;
 import com.kshrd.relational_mapping.repository.RoleRepository;
 import com.kshrd.relational_mapping.repository.UserRepository;
@@ -26,7 +24,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UserDto> getAllUsers() {
         return userRepository.findAll().stream()
-                .map(role -> mapper.map(role, UserDto.class))
+                .map(user -> mapper.map(user, UserDto.class))
                 .collect(Collectors.toList());
     }
 

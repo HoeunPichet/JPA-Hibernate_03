@@ -1,9 +1,11 @@
 package com.kshrd.relational_mapping.model.dto;
 
-import jakarta.persistence.Column;
+import com.kshrd.relational_mapping.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,4 +16,6 @@ public class WorkspaceDto {
     private String name;
 
     private String code;
+
+    private List<UserDto> users;
 }

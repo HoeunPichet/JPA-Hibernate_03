@@ -16,6 +16,6 @@ public class WorkspaceRequest {
     private String code;
 
     public Workspace toEntity() {
-        return new Workspace(null, this.name, this.code);
+        return new Workspace(null, this.name, this.code, null);
     }
 }

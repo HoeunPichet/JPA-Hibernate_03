@@ -28,9 +28,4 @@ public class UserWorkspace {
     private Workspace workspace;
 
     private Boolean isAccepted;
-
-    @PrePersist
-    protected void onCreate() {
-        this.isAccepted = false;
-    }
 }
